@@ -18,7 +18,9 @@ module.exports = function(config) {
       'bower_components/angular/angular.js',
       'bower_components/lodash/dist/lodash.js',
       'src/**/*.js',
+      'bower_components/ng-module-introspector/ng-module-introspector.js',
       'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/ng-improved-testing/ng-improved-testing.js',
       'test/**/*.js'
     ],
 
@@ -50,11 +52,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false,
-
-    preprocessors: {
-      'src/**/*.js': ['coverage']
-    }
+    singleRun: false
 
   });
 };
