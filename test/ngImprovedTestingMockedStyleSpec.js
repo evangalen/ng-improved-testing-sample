@@ -2,8 +2,7 @@ describe('permissions service (ngImprovedTesting spec)', function() {
 
     beforeEach(ModuleBuilder.forModule('myApp')
         .serviceWithMocks('permissions')
-        //TODO: make controller with mocks working
-//        .controllerWithMocks('AppCtrl')
+        .controllerWithMocks('AppCtrl')
         .filterWithMocks('fullname')
         .build());
 
@@ -29,8 +28,7 @@ describe('permissions service (ngImprovedTesting spec)', function() {
         describe('$scope', function() {
 
             describe('loggedInUserHasAdminAccess method', function() {
-                //TODO: make controller with mocks working
-                xit('should use permissions#hasAdminAccess and the logged in user', inject(function(permissionsMock) {
+                it('should use permissions#hasAdminAccess and the logged in user', inject(function(permissionsMock) {
                     $scope.login('anAdminUser');
                     permissionsMock.hasAdminAccess.andReturn(true);
 
