@@ -1,4 +1,4 @@
-describe('$httpBackend style permissions service specification', function() {
+describe('$httpBackend style permissionsService specification', function() {
 
     beforeEach(module('myApp'));
 
@@ -7,14 +7,14 @@ describe('$httpBackend style permissions service specification', function() {
     }));
 
 
-    describe('permissions service', function() {
+    describe('permissionsService', function() {
 
         describe('hasAdminAccess method', function() {
             it('should return true when user details has property: admin == true',
-                inject(function(permissions, $httpBackend) {
+                inject(function(permissionService, $httpBackend) {
                     $httpBackend.flush();
 
-                    expect(permissions.hasAdminAccess('anAdminUser')).toBe(true);
+                    expect(permissionService.hasAdminAccess('anAdminUser')).toBe(true);
                 }));
         });
     });

@@ -1,7 +1,7 @@
-describe('ngImprovedTesting mocked style AppCtrl controller specification', function() {
+describe('ngImprovedTesting mocked style AppController specification', function() {
 
     beforeEach(ModuleBuilder.forModule('myApp')
-        .controllerWithMocks('AppCtrl')
+        .controllerWithMocks('AppController')
         .build());
 
     describe('$scope', function() {
@@ -11,17 +11,17 @@ describe('ngImprovedTesting mocked style AppCtrl controller specification', func
         beforeEach(inject(function($controller, $rootScope) {
             $scope = $rootScope.$new();
 
-            $controller('AppCtrl', {$scope: $scope});
+            $controller('AppController', {$scope: $scope});
         }));
 
 
         describe('loggedInUserHasAdminAccess method', function() {
-            it('should use permissions#hasAdminAccess and the logged in user', inject(function(permissionsMock) {
+            it('should use permissions#hasAdminAccess and the logged in user', inject(function(permissionServiceMock) {
                 $scope.login('anAdminUser');
-                permissionsMock.hasAdminAccess.andReturn(true);
+                permissionServiceMock.hasAdminAccess.andReturn(true);
 
                 expect($scope.loggedInUserHasAdminAccess()).toBe(true);
-                expect(permissionsMock.hasAdminAccess).toHaveBeenCalledWith('anAdminUser');
+                expect(permissionServiceMock.hasAdminAccess).toHaveBeenCalledWith('anAdminUser');
             }));
         });
     });

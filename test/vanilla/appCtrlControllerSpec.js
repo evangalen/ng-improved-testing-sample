@@ -1,12 +1,12 @@
-describe('Vanilla mocked style AppCtrl controller specification', function () {
-    var permissionsMock;
+describe('Vanilla mocked style AppController specification', function () {
+    var permissionServiceMock;
 
     beforeEach(module('myApp', function ($provide) {
-        permissionsMock = {
+        permissionServiceMock = {
             hasAdminAccess: jasmine.createSpy()
         };
 
-        $provide.value('permissions', permissionsMock);
+        $provide.value('permissionService', permissionServiceMock);
     }));
 
 
@@ -14,7 +14,7 @@ describe('Vanilla mocked style AppCtrl controller specification', function () {
 
     beforeEach(inject(function ($controller, $rootScope) {
         $scope = $rootScope.$new();
-        $controller('AppCtrl', {$scope: $scope});
+        $controller('AppController', {$scope: $scope});
     }));
 
 
@@ -23,10 +23,10 @@ describe('Vanilla mocked style AppCtrl controller specification', function () {
         describe('loggedInUserHasAdminAccess method', function () {
             it('should use permissions#hasAdminAccess and the logged in user', function () {
                 $scope.login('anAdminUser');
-                permissionsMock.hasAdminAccess.andReturn(true);
+                permissionServiceMock.hasAdminAccess.andReturn(true);
 
                 expect($scope.loggedInUserHasAdminAccess()).toBe(true);
-                expect(permissionsMock.hasAdminAccess).toHaveBeenCalledWith('anAdminUser');
+                expect(permissionServiceMock.hasAdminAccess).toHaveBeenCalledWith('anAdminUser');
             });
         });
     });

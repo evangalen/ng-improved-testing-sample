@@ -4,11 +4,11 @@ describe('ngImprovedTesting mocked style fullname filter specification', functio
         .filterWithMocks('fullname')
         .build());
 
-    it('should return the fullname for a user name', inject(function (fullnameFilter, usersMock) {
-        usersMock.getUserDetails.andReturn({fullname: 'an admin user'});
+    it('should return the fullname for a user name', inject(function (fullnameFilter, userServiceMock) {
+        userServiceMock.getUserDetails.andReturn({fullname: 'an admin user'});
 
         expect(fullnameFilter('anAdminUser')).toBe('an admin user');
-        expect(usersMock.getUserDetails).toHaveBeenCalledWith('anAdminUser');
+        expect(userServiceMock.getUserDetails).toHaveBeenCalledWith('anAdminUser');
     }));
 
 });

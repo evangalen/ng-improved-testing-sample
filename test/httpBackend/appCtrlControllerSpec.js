@@ -1,4 +1,4 @@
-describe('$httpBackend style AppCtrl controller specification', function() {
+describe('$httpBackend style AppController specification', function() {
 
     beforeEach(module('myApp'));
 
@@ -13,7 +13,7 @@ describe('$httpBackend style AppCtrl controller specification', function() {
 
         beforeEach(inject(function ($controller, $rootScope) {
             $scope = $rootScope.$new();
-            $controller('AppCtrl', {$scope: $scope});
+            $controller('AppController', {$scope: $scope});
         }));
 
 

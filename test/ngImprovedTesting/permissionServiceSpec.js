@@ -1,15 +1,16 @@
-describe('ngImprovedTesting mocked style permissions service specification', function() {
+describe('ngImprovedTesting mocked style PermissionService specification', function() {
 
     beforeEach(ModuleBuilder.forModule('myApp')
-        .serviceWithMocks('permissions')
+        .serviceWithMocks('permissionService')
         .build());
 
     describe('hasAdminAccess method', function() {
 
-        it('should return true when user details has property: admin == true', inject(function(permissions, usersMock) {
-            usersMock.getUserDetails.andReturn({admin: true});
+        it('should return true when user details has property: admin == true',
+                inject(function(permissionService, userServiceMock) {
+            userServiceMock.getUserDetails.andReturn({admin: true});
 
-            expect(permissions.hasAdminAccess('anAdminUser')).toBe(true);
+            expect(permissionService.hasAdminAccess('anAdminUser')).toBe(true);
         }));
     });
 
