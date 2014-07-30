@@ -1,7 +1,7 @@
 describe('ngImprovedTesting mocked style PermissionService specification', function() {
 
     beforeEach(ModuleBuilder.forModule('myApp')
-        .serviceWithMocks('permissionService')
+        .serviceWithMocksFor('permissionService', 'userService')
         .build());
 
     describe('hasAdminAccess method', function() {
