@@ -1,0 +1,1 @@
+beforeEach(ngImprovedTesting.config.$qTickEnable());
