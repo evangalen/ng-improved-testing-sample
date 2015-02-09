@@ -2,7 +2,7 @@ describe('ngImprovedTesting style of testing promises', function() {
 
     describe('should invoke the then callback of a promise after a $q.tick()', function() {
         it('when using a module created using the ModuleBuilder API', function() {
-            ModuleBuilder.forModule('myApp').build();
+            ModuleBuilder.forModules('myApp').build();
         });
 
         it('when using angular.mock.module', function() {

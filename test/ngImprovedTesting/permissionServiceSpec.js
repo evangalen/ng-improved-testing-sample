@@ -1,6 +1,6 @@
 describe('ngImprovedTesting mocked style PermissionService specification', function() {
 
-    beforeEach(ModuleBuilder.forModule('myApp')
+    beforeEach(ModuleBuilder.forModules('myApp')
         .serviceWithMocksFor('permissionService', 'userService')
         .build());
 

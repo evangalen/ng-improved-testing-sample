@@ -1,6 +1,6 @@
 describe('ngImprovedTesting mocked style fullname filter specification', function() {
 
-    beforeEach(ModuleBuilder.forModule('myApp')
+    beforeEach(ModuleBuilder.forModules('myApp')
         .filterWithMocksFor('fullname', 'userService')
         .build());
 

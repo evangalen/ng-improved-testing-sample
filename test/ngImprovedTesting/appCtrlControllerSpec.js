@@ -1,6 +1,6 @@
 describe('ngImprovedTesting mocked style AppController specification', function() {
 
-    beforeEach(ModuleBuilder.forModule('myApp')
+    beforeEach(ModuleBuilder.forModules('myApp')
         .controllerWithMocksFor('AppController', 'permissionService')
         .build());
 
