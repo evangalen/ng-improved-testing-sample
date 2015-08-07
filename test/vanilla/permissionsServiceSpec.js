@@ -12,7 +12,7 @@ describe('Vanilla mocked style permissions service specification', function () {
 
     describe('hasAdminAccess method', function () {
         it('should return true when user details has property: admin == true', inject(function (permissionService) {
-            userServiceMock.getUserDetails.andReturn({admin: true});
+            userServiceMock.getUserDetails.and.returnValue({admin: true});
 
             expect(permissionService.hasAdminAccess('anAdminUser')).toBe(true);
             expect(userServiceMock.getUserDetails).toHaveBeenCalledWith('anAdminUser');
