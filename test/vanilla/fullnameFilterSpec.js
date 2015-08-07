@@ -12,7 +12,7 @@ describe('Vanilla mocked style fullname filter specification', function () {
 
 
     it('should return the fullname for a user name', inject(function (fullnameFilter) {
-        userServiceMock.getUserDetails.andReturn({fullname: 'an admin user'});
+        userServiceMock.getUserDetails.and.returnValue({fullname: 'an admin user'});
 
         expect(fullnameFilter('anAdminUser')).toBe('an admin user');
         expect(userServiceMock.getUserDetails).toHaveBeenCalledWith('anAdminUser');

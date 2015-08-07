@@ -12,7 +12,7 @@ describe('ngImprovedTesting style of testing promises', function() {
 
         afterEach(inject(function($q, $rootScope) {
             // given
-            var promiseSuccessCallback = jasmine.createSpy('first').andReturn('someModifiedValue');
+            var promiseSuccessCallback = jasmine.createSpy('first').and.returnValue('someModifiedValue');
             var chainedPromiseSuccessCallback = jasmine.createSpy('second');
             var deferred = $q.defer();
             deferred.promise.then(promiseSuccessCallback).then(chainedPromiseSuccessCallback);
