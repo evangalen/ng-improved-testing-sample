@@ -1,4 +1,4 @@
-xdescribe('Vanilla style of testing promises', function() {
+describe('Vanilla style of testing promises', function() {
     var $q;
     var $rootScope;
 
@@ -10,7 +10,7 @@ xdescribe('Vanilla style of testing promises', function() {
 
     it('should invoke the then callback of a promise only after a $rootScope.$digest()', function() {
         // given
-        var promiseSuccessCallback = jasmine.createSpy('first').andReturn('someModifiedValue');
+        var promiseSuccessCallback = jasmine.createSpy('first').and.returnValue('someModifiedValue');
         var chainedPromiseSuccessCallback = jasmine.createSpy('second');
         var deferred = $q.defer();
         deferred.promise.then(promiseSuccessCallback).then(chainedPromiseSuccessCallback);
